@@ -15,6 +15,7 @@ public class Electrodomestico{
     private String color;
     private char consumoEner;
     private float peso;
+    public float precioFinal;
     
     public Electrodomestico(){
     }
@@ -60,7 +61,7 @@ public class Electrodomestico{
         this.peso = peso;
     }
     // Metodos Funcionales
-    public char comprobarConsumoEnergetico(char consumoEner){
+    public char comprobarConsumoEnergetico(){
         if(consumoEner == 'A' || consumoEner == 'a'){
              return consumoEner;
             }else if(consumoEner == 'B' || consumoEner == 'b'){
@@ -78,7 +79,7 @@ public class Electrodomestico{
                 return consumoEner;
             }
     }
-        public String comprobarColor(String color){
+        public String comprobarColor(){
         switch (color) {
             case "Blanco":
                 return color;
@@ -94,15 +95,54 @@ public class Electrodomestico{
                 color = "Blanco";
                 return color;
         }
-    } 
+    }
+        public float precioFinal(){
+            
+            switch (consumoEner) {
+            case 'A':
+            case 'a':
+                precioFinal = precioBase + 100;
+                return precioFinal;
+                
+            case 'B':
+            case 'b':
+                precioFinal = precioBase + 80;
+                return precioFinal;
+                
+            case 'C':
+            case 'c':
+                precioFinal = precioBase + 60;
+                return precioFinal;
+                
+            case 'D':
+            case 'd':
+                precioFinal = precioBase + 50;
+                return precioFinal;
+                
+            case 'E':
+            case 'e':
+                precioFinal = precioBase + 30;
+                return precioFinal;
+                
+            case 'F':
+            case 'f':
+                precioFinal = precioBase + 10;
+                return precioFinal;
+                
+            default:
+               
+                return precioBase;
+            }
+        }
     @Override
     public String toString(){
     return " El precio: " + this.precioBase+
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
             "\n El Consumo Energetico: " + this.consumoEner + 
-            "\n Prueba del metodo consumo electrico: " + comprobarConsumoEnergetico(consumoEner) +
-            "\n Comprobar Color prueba: " + comprobarColor(color) ;
+            "\n Prueba del metodo consumo electrico: " + comprobarConsumoEnergetico() +
+            "\n Comprobar Color prueba: " + comprobarColor()+ 
+            "\n Prueba de precio Final" + this.precioFinal;
     }
 
         
