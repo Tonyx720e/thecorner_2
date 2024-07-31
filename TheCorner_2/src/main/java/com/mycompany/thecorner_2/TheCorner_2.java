@@ -33,7 +33,6 @@ public class TheCorner_2 {
         electroD.setConsumoEnergetico(consumoEnergetico);
         
         System.out.println(electroD.toString());
-        System.out.println("Prueba de metodo  consumoEner" + electroD.comprobarConsumoEnergetico(consumoEnergetico));
         
         
         

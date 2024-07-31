@@ -77,14 +77,32 @@ public class Electrodomestico{
                        consumoEner = 'A';
                 return consumoEner;
             }
-        
     }
+        public String comprobarColor(String color){
+        switch (color) {
+            case "Blanco":
+                return color;
+            case "Negro":
+                return color;
+            case "Rojo":
+                return color;
+            case "Azul":
+                return color;
+            case "Gris":
+                return color;
+            default:
+                color = "Blanco";
+                return color;
+        }
+    } 
     @Override
     public String toString(){
     return " El precio: " + this.precioBase+
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
-            "\n El Consumo Energetico: " + this.consumoEner + "Prueba del metodo consumo electrico" + this.comprobarConsumoEnergetico(consumoEner) ;
+            "\n El Consumo Energetico: " + this.consumoEner + 
+            "\n Prueba del metodo consumo electrico: " + comprobarConsumoEnergetico(consumoEner) +
+            "\n Comprobar Color prueba: " + comprobarColor(color) ;
     }
 
         
