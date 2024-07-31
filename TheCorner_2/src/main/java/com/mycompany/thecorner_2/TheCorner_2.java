@@ -27,10 +27,10 @@ public class TheCorner_2 {
         
         Electrodomestico electroD;
         electroD = new Electrodomestico();
-        electroD.setPrecioB(precioBase);
+        electroD.setPrecioBase(precioBase);
         electroD.setPeso(peso);
         electroD.setColor(color);
-        electroD.setConsumoE(consumoEnergetico);
+        electroD.setConsumoEnergetico(consumoEnergetico);
         
         System.out.println(electroD.toString());
         

@@ -3,8 +3,13 @@ package Clases;
 
 /**
  *
+ * @author maria
+ */
+/**
+ *
  * @author Tony Medina
  */
+
 public class Electrodomestico{
     private float precioBase;
     private String color;
@@ -29,7 +34,7 @@ public class Electrodomestico{
      *
      * @return
      */
-    public float getPrecioB(){
+    public float getPrecioBase(){
         return this.precioBase;
     }
     public float getPeso(){
@@ -42,19 +47,19 @@ public class Electrodomestico{
         return this.consumoEner;
     }
     // Setters
-    public void setPrecioB(float precioBase){
-    this.precioBase = precioBase;
-    }
-    public void setPeso(float peso){
-    this.peso = peso;
+   public void setPrecioBase(float precioBase){
+        this.precioBase = precioBase;
     }
     public void setColor(String color){
-    this.color = color;
+        this.color = color;
     }
-    public void setConsumoE(String consumoEner){
-    this.consumoEner = consumoEner;
+    public void setConsumoEnergetico(String consumoEner){
+        this.consumoEner = consumoEner;
     }
-    
+    public void setPeso(float peso){
+        this.peso = peso;
+    }
+    @Override
     public String toString(){
     return "El precio: " + this.precioBase+
             "El color: " + this.color+
