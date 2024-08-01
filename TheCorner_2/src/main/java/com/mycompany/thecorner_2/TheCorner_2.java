@@ -16,7 +16,7 @@ public class TheCorner_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        System.out.println("Introduce el precion: ");
+        System.out.println("Introduce el precio: ");
         float precioBase = sc.nextFloat();
         System.out.println("Introduce peso: ");
         float peso = sc.nextFloat();
@@ -25,14 +25,19 @@ public class TheCorner_2 {
         System.out.println("Introduce consumo energetico: ");
         char consumoEnergetico = sc.next().charAt(0);
         
+        // Intancia de mi clase padre
         Electrodomestico electroD;
+        // inicializacion de objeto
         electroD = new Electrodomestico();
         electroD.setPrecioBase(precioBase);
         electroD.setPeso(peso);
         electroD.setColor(color);
         electroD.setConsumoEnergetico(consumoEnergetico);
         
+        // llamar metodos
         System.out.println(electroD.toString());
+       // float precioFinal = electroD.precioFinal();
+        //System.out.println("Precio Final: " + precioFinal);
         
         
         

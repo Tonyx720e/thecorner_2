@@ -101,7 +101,7 @@ public class Electrodomestico{
             switch (consumoEner) {
             case 'A':
             case 'a':
-                precioFinal = precioBase + 100;
+                precioFinal = this.precioBase + 100;
                 return precioFinal;
                 
             case 'B':
@@ -142,7 +142,7 @@ public class Electrodomestico{
             "\n El Consumo Energetico: " + this.consumoEner + 
             "\n Prueba del metodo consumo electrico: " + comprobarConsumoEnergetico() +
             "\n Comprobar Color prueba: " + comprobarColor()+ 
-            "\n Prueba de precio Final" + this.precioFinal;
+            "\n Prueba de precio Final " + this.precioFinal();
     }
 
         
