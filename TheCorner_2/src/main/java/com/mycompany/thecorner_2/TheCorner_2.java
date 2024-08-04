@@ -32,10 +32,10 @@ public class TheCorner_2 {
         electroD.setPrecioBase(precioBase);
         electroD.setPeso(peso);
         electroD.setColor(color);
-        electroD.setConsumoEnergetico(consumoEnergetico);
+        System.out.println(electroD.toString());
+        //electroD.setConsumoEnergetico(consumoEnergetico);
         
         // llamar metodos
-        System.out.println(electroD.toString());
        //float precioFinal = electroD.precioFinal();
         //System.out.println("Precio Final: " + precioFinal);
         

@@ -12,6 +12,7 @@ package Clases;
 
 public class Electrodomestico{
     private float precioBase;
+    //static final String color = "Blanco";
     private String color;
     private char consumoEner;
     private float peso;
@@ -98,42 +99,6 @@ public class Electrodomestico{
         }
     }
         public float precioFinal(){
-            
-           /* switch (consumoEner) {
-            case 'A':
-            case 'a':
-                precioMinimo = this.precioBase + 100;
-                return precioMinimo;
-                
-            case 'B':
-            case 'b':
-                precioMinimo = precioBase + 80;
-                return precioMinimo;
-                
-            case 'C':
-            case 'c':
-                precioMinimo = precioBase + 60;
-                return precioMinimo;
-                
-            case 'D':
-            case 'd':
-                precioMinimo = precioBase + 50;
-                return precioMinimo;
-                
-            case 'E':
-            case 'e':
-                precioMinimo = precioBase + 30;
-                return precioMinimo;
-                
-            case 'F':
-            case 'f':
-                precioMinimo = precioBase + 10;
-                return precioMinimo;
-                
-            default:
-               
-                return precioBase;
-            }*/
             for(int i = 1; i <= 6; i++){
                 if(consumoEner == 'A' || consumoEner == 'a'){
                     precioMinimo = this.precioBase + 100;
@@ -168,9 +133,9 @@ public class Electrodomestico{
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
             "\n El Consumo Energetico: " + this.consumoEner + 
-            "\n Prueba del metodo consumo electrico: " + comprobarConsumoEnergetico() +
-            "\n Comprobar Color prueba: " + comprobarColor()+ 
-            "\n Prueba de precio Final " + this.precioFinal();
+            "\n Prueba del metodo consumo electrico: " + this.comprobarConsumoEnergetico() +
+            "\n Comprobar Color prueba: " + this.comprobarColor()+ 
+            "\n Prueba de precio Final " + precioFinal();
     }
 
         
