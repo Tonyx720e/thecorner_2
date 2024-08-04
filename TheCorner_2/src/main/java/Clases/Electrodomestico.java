@@ -15,6 +15,7 @@ public class Electrodomestico{
     private String color;
     private char consumoEner;
     private float peso;
+    public float precioMinimo;
     public float precioFinal;
     
     public Electrodomestico(){
@@ -98,42 +99,69 @@ public class Electrodomestico{
     }
         public float precioFinal(){
             
-            switch (consumoEner) {
+           /* switch (consumoEner) {
             case 'A':
             case 'a':
-                precioFinal = this.precioBase + 100;
-                return precioFinal;
+                precioMinimo = this.precioBase + 100;
+                return precioMinimo;
                 
             case 'B':
             case 'b':
-                precioFinal = precioBase + 80;
-                return precioFinal;
+                precioMinimo = precioBase + 80;
+                return precioMinimo;
                 
             case 'C':
             case 'c':
-                precioFinal = precioBase + 60;
-                return precioFinal;
+                precioMinimo = precioBase + 60;
+                return precioMinimo;
                 
             case 'D':
             case 'd':
-                precioFinal = precioBase + 50;
-                return precioFinal;
+                precioMinimo = precioBase + 50;
+                return precioMinimo;
                 
             case 'E':
             case 'e':
-                precioFinal = precioBase + 30;
-                return precioFinal;
+                precioMinimo = precioBase + 30;
+                return precioMinimo;
                 
             case 'F':
             case 'f':
-                precioFinal = precioBase + 10;
-                return precioFinal;
+                precioMinimo = precioBase + 10;
+                return precioMinimo;
                 
             default:
                
                 return precioBase;
+            }*/
+            for(int i = 1; i <= 6; i++){
+                if(consumoEner == 'A' || consumoEner == 'a'){
+                    precioMinimo = this.precioBase + 100;
+                }else if(consumoEner == 'B' || consumoEner == 'b'){
+                     precioMinimo = precioBase + 80;
+                }else if(consumoEner == 'C' || consumoEner == 'c'){
+                     precioMinimo = precioBase + 60;
+                }else if(consumoEner == 'D' || consumoEner == 'd'){
+                     precioMinimo = precioBase + 50;
+                }else if(consumoEner == 'E' || consumoEner == 'e'){
+                     precioMinimo = precioBase + 30;
+                }else if(consumoEner == 'F' || consumoEner == 'f'){
+                     precioMinimo = precioBase + 10;
+                }
+                if(peso > 0 & peso <= 19){
+                    precioFinal = precioMinimo + 10;
+                        
+                } else if(peso > 20 & peso <= 49){
+                    precioFinal = precioMinimo + 50;
+                }else if(peso > 50 & peso <= 79){
+                    precioFinal = precioMinimo + 80;
+                }else if(peso > 80){
+                    precioFinal = precioMinimo + 100;
+                }
             }
+        return precioFinal;
         }
+        
     @Override
     public String toString(){
     return " El precio: " + this.precioBase+

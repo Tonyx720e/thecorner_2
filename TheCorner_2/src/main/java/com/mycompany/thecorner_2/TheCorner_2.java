@@ -36,7 +36,7 @@ public class TheCorner_2 {
         
         // llamar metodos
         System.out.println(electroD.toString());
-       // float precioFinal = electroD.precioFinal();
+       //float precioFinal = electroD.precioFinal();
         //System.out.println("Precio Final: " + precioFinal);
         
         
