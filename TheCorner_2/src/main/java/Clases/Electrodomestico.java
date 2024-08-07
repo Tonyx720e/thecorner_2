@@ -21,21 +21,19 @@ public class Electrodomestico{
     public float precioFinal;
     
     // Constantes
-     private static final String color_por_defecto = "blanco";
-     private static final char consumoE_por_defecto = 'f';
-     private static final float peso_por_defecto = 5;
-     private static final float precio_por_defecto = 100;
+     private static final String COLOR_POR_DEFECTO = "blanco";
+     private static final char CONSUMOE_POR_DEFECTO = 'f';
+     private static final float PESO_POR_DEFECTO = 5;
+     private static final float PRECIO_POR_DEFECTO = 100;
     
      // Colores disponibles
-    private static final String[] colorDisponible = {"Blanco","Negro","Rojo","Azul","Gris"};
+    private static final String[] colorDisponible = {"blanco","negro","rojo","azul","gris"};
+    
     public Electrodomestico(){
-        this.color = color_por_defecto;
-        this.consumoEner = consumoE_por_defecto;
-        this.peso = peso_por_defecto;
-        this.precioBase = precio_por_defecto;
+       
     }
     public Electrodomestico(float precioBase, float peso){
-    this();
+    
     this.precioBase = precioBase;
     this.peso = peso;
     }
@@ -43,6 +41,26 @@ public class Electrodomestico{
         this.precioBase = precioBase;
         this.color = color;
         this.consumoEner = consumoEner;
+        this.peso = peso;
+    }
+    
+    // Setters
+   public void setPrecioBase(float precioBase){
+       if(precioBase != 0){
+        this.precioBase = precioBase;
+       }else{
+        this.precioBase = PRECIO_POR_DEFECTO;
+       }
+    }
+    public void setColor(String color){
+        this.color = color;
+         
+    }
+    
+    public void setConsumoEnergetico(char consumoEner){
+        this.consumoEner = consumoEner;
+    }
+    public void setPeso(float peso){
         this.peso = peso;
     }
     // getter
@@ -63,82 +81,57 @@ public class Electrodomestico{
     public char getConsuEnergetico(){
         return this.consumoEner;
     }
-    // Setters
-   public void setPrecioBase(float precioBase){
-       if(precioBase != 0){
-        this.precioBase = precioBase;
-       }else{
-        this.precioBase = precio_por_defecto;
-       }
-    }
-    public void setColor(String color){
-        for(String cd: colorDisponible){
-        if(cd.equalsIgnoreCase(color)){
-        this.color = color;
-        }else{
-        this.color = color_por_defecto;
-        }
-        
-       }
-    }
-    public void setConsumoEnergetico(char consumoEner){
-        this.consumoEner = consumoEner;
-    }
-    public void setPeso(float peso){
-        this.peso = peso;
-    }
     // Metodos Funcionales
     public char comprobarConsumoEnergetico(){
-        if(consumoEner == 'A' || consumoEner == 'a'){
-             return consumoEner;
-            }else if(consumoEner == 'B' || consumoEner == 'b'){
-                return consumoEner;
-            }else if(consumoEner == 'C' || consumoEner == 'c'){
-                return consumoEner;
-            }else if(consumoEner == 'D' || consumoEner == 'd'){
-                return consumoEner;
-            }else if(consumoEner == 'E' || consumoEner == 'e'){
-            } else if(consumoEner == 'F' || consumoEner == 'f'){
-                return consumoEner;
-            }else if(consumoEner == 'F' || consumoEner == 'f'){
-                return consumoEner;
-            }else{
-                this.consumoEner = consumoE_por_defecto;
+        switch (consumoEner) {
+            case 'A', 'a' -> {
                 return consumoEner;
             }
-        return 0;
-    }
-        public String comprobarColor(){
-        switch (color) {
-            case "Blanco", "blanco":
-                return color;
-            case "Negro", "negro":
-                return color;
-            case "Rojo":
-                return color;
-            case "Azul":
-                return color;
-            case "Gris":
-                return color;
-            default:
-                this.color = color_por_defecto;
-                return color;
+            case 'B', 'b' -> {
+                return consumoEner;
+            }
+            case 'C', 'c' -> {
+                return consumoEner;
+            }
+            case 'D', 'd' -> {
+                return consumoEner;
+            }
+            case 'E', 'e' -> {
+                return consumoEner;
+            }
+            case 'F', 'f' -> {
+                return consumoEner;
+            }
+            default -> {
+                this.consumoEner = CONSUMOE_POR_DEFECTO;
+                return consumoEner;
+            }
         }
+        }
+    
+        public String comprobarColor(){
+            
+        String colorMin = this.color.toLowerCase();
+            for(String cd: colorDisponible){
+            if(cd.equals(colorMin)){
+            this.color = colorMin;
+            return color;
+        }
+    }
+        color = COLOR_POR_DEFECTO;
+        return color;
     }
         public float precioFinal(){
             for(int i = 1; i <= 6; i++){
-                if(consumoEner == 'A' || consumoEner == 'a'){
-                    precioMinimo = this.precioBase + 100;
-                }else if(consumoEner == 'B' || consumoEner == 'b'){
-                     precioMinimo = precioBase + 80;
-                }else if(consumoEner == 'C' || consumoEner == 'c'){
-                     precioMinimo = precioBase + 60;
-                }else if(consumoEner == 'D' || consumoEner == 'd'){
-                     precioMinimo = precioBase + 50;
-                }else if(consumoEner == 'E' || consumoEner == 'e'){
-                     precioMinimo = precioBase + 30;
-                }else if(consumoEner == 'F' || consumoEner == 'f'){
-                     precioMinimo = precioBase + 10;
+                switch (consumoEner) {
+                    case 'A', 'a' -> precioMinimo = this.precioBase + 100;
+                    case 'B', 'b' -> precioMinimo = precioBase + 80;
+                    case 'C', 'c' -> precioMinimo = precioBase + 60;
+                    case 'D', 'd' -> precioMinimo = precioBase + 50;
+                    case 'E', 'e' -> precioMinimo = precioBase + 30;
+                    case 'F', 'f' -> precioMinimo = precioBase + 10;
+                    default -> {
+                    }
                 }
                 if(peso > 0 & peso <= 19){
                     precioFinal = precioMinimo + 10;
@@ -161,7 +154,7 @@ public class Electrodomestico{
             "\n El peso: "  + this.peso+
             "\n El Consumo Energetico: " + this.consumoEner + 
             "\n Prueba del metodo consumo electrico: " + this.comprobarConsumoEnergetico() +
-            "\n Comprobar Color prueba: " + comprobarColor()+ 
+            "\n Comprobar Color prueba: " + this.comprobarColor()+ 
             "\n Prueba de precio Final " + this.precioFinal();
     }
 

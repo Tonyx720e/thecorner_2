@@ -21,8 +21,10 @@ public class TheCorner_2 {
         System.out.println("Introduce peso: ");
         float peso = sc.nextFloat();
         System.out.println("Introduce Color: ");
-        String color = sc.nextLine();
-        sc.next();
+        
+        String color = sc.next();
+        
+        
         System.out.println("Introduce consumo energetico: ");
         char consumoEnergetico = sc.next().charAt(0);
         
@@ -34,6 +36,7 @@ public class TheCorner_2 {
         electroD.setPeso(peso);
         electroD.setColor(color);
         System.out.println(electroD.toString());
+        System.out.println("Esto es prueba de color: " + electroD.getColor());
         //electroD.setConsumoEnergetico(consumoEnergetico);
         
         // llamar metodos
