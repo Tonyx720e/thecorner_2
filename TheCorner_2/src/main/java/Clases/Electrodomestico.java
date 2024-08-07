@@ -16,12 +16,26 @@ public class Electrodomestico{
     private String color;
     private char consumoEner;
     private float peso;
+    
     public float precioMinimo;
     public float precioFinal;
     
+    // Constantes
+     private static final String color_por_defecto = "blanco";
+     private static final char consumoE_por_defecto = 'f';
+     private static final float peso_por_defecto = 5;
+     private static final float precio_por_defecto = 100;
+    
+     // Colores disponibles
+    private static final String[] colorDisponible = {"Blanco","Negro","Rojo","Azul","Gris"};
     public Electrodomestico(){
+        this.color = color_por_defecto;
+        this.consumoEner = consumoE_por_defecto;
+        this.peso = peso_por_defecto;
+        this.precioBase = precio_por_defecto;
     }
     public Electrodomestico(float precioBase, float peso){
+    this();
     this.precioBase = precioBase;
     this.peso = peso;
     }
@@ -51,10 +65,21 @@ public class Electrodomestico{
     }
     // Setters
    public void setPrecioBase(float precioBase){
+       if(precioBase != 0){
         this.precioBase = precioBase;
+       }else{
+        this.precioBase = precio_por_defecto;
+       }
     }
     public void setColor(String color){
+        for(String cd: colorDisponible){
+        if(cd.equalsIgnoreCase(color)){
         this.color = color;
+        }else{
+        this.color = color_por_defecto;
+        }
+        
+       }
     }
     public void setConsumoEnergetico(char consumoEner){
         this.consumoEner = consumoEner;
@@ -73,19 +98,21 @@ public class Electrodomestico{
             }else if(consumoEner == 'D' || consumoEner == 'd'){
                 return consumoEner;
             }else if(consumoEner == 'E' || consumoEner == 'e'){
+            } else if(consumoEner == 'F' || consumoEner == 'f'){
                 return consumoEner;
             }else if(consumoEner == 'F' || consumoEner == 'f'){
                 return consumoEner;
             }else{
-                       consumoEner = 'A';
+                this.consumoEner = consumoE_por_defecto;
                 return consumoEner;
             }
+        return 0;
     }
         public String comprobarColor(){
         switch (color) {
-            case "Blanco":
+            case "Blanco", "blanco":
                 return color;
-            case "Negro":
+            case "Negro", "negro":
                 return color;
             case "Rojo":
                 return color;
@@ -94,7 +121,7 @@ public class Electrodomestico{
             case "Gris":
                 return color;
             default:
-                color = "Blanco";
+                this.color = color_por_defecto;
                 return color;
         }
     }
@@ -135,7 +162,7 @@ public class Electrodomestico{
             "\n El Consumo Energetico: " + this.consumoEner + 
             "\n Prueba del metodo consumo electrico: " + this.comprobarConsumoEnergetico() +
             "\n Comprobar Color prueba: " + this.comprobarColor()+ 
-            "\n Prueba de precio Final " + precioFinal();
+            "\n Prueba de precio Final " + this.precioFinal();
     }
 
         

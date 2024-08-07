@@ -40,8 +40,5 @@ public class TheCorner_2 {
         //System.out.println("Precio Final: " + precioFinal);
         
         
-        
-        
-        
     }
 }
