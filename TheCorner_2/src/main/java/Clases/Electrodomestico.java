@@ -161,7 +161,7 @@ public class Electrodomestico{
             "\n El peso: "  + this.peso+
             "\n El Consumo Energetico: " + this.consumoEner + 
             "\n Prueba del metodo consumo electrico: " + this.comprobarConsumoEnergetico() +
-            "\n Comprobar Color prueba: " + this.comprobarColor()+ 
+            "\n Comprobar Color prueba: " + comprobarColor()+ 
             "\n Prueba de precio Final " + this.precioFinal();
     }
 

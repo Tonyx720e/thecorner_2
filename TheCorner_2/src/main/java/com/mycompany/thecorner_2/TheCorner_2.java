@@ -21,7 +21,8 @@ public class TheCorner_2 {
         System.out.println("Introduce peso: ");
         float peso = sc.nextFloat();
         System.out.println("Introduce Color: ");
-        String color = sc.next();
+        String color = sc.nextLine();
+        sc.next();
         System.out.println("Introduce consumo energetico: ");
         char consumoEnergetico = sc.next().charAt(0);
         
