@@ -35,6 +35,7 @@ public class TheCorner_2 {
         electroD.setPrecioBase(precioBase);
         electroD.setPeso(peso);
         electroD.setColor(color);
+        electroD.setConsumoEnergetico(consumoEnergetico);
         System.out.println(electroD.toString());
         System.out.println("Esto es prueba de color: " + electroD.getColor());
         //electroD.setConsumoEnergetico(consumoEnergetico);

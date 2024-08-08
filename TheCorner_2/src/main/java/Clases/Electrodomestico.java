@@ -122,7 +122,7 @@ public class Electrodomestico{
         return color;
     }
         public float precioFinal(){
-            for(int i = 1; i <= 6; i++){
+            
                 switch (consumoEner) {
                     case 'A', 'a' -> precioMinimo = this.precioBase + 100;
                     case 'B', 'b' -> precioMinimo = precioBase + 80;
@@ -143,17 +143,17 @@ public class Electrodomestico{
                 }else if(peso > 80){
                     precioFinal = precioMinimo + 100;
                 }
-            }
         return precioFinal;
-        }
+            }
+        
         
     @Override
     public String toString(){
     return " El precio: " + this.precioBase+
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
-            "\n El Consumo Energetico: " + this.consumoEner + 
-            "\n Prueba del metodo consumo electrico: " + this.comprobarConsumoEnergetico() +
+            "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
+            "\n Prueba del metodo consumo Energetico: " + this.comprobarConsumoEnergetico() +
             "\n Comprobar Color prueba: " + this.comprobarColor()+ 
             "\n Prueba de precio Final " + this.precioFinal();
     }
