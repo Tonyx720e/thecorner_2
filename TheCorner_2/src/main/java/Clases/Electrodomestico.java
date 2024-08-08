@@ -3,7 +3,7 @@ package Clases;
 
 /**
  *
- * @author maria
+ * @author maria (Esto es una prueba)
  */
 /**
  *

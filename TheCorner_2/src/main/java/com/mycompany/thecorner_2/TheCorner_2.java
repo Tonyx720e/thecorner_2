@@ -38,6 +38,7 @@ public class TheCorner_2 {
         electroD.setConsumoEnergetico(consumoEnergetico);
         System.out.println(electroD.toString());
         System.out.println("Esto es prueba de color: " + electroD.getColor());
+        //esto es una prueba        
         //electroD.setConsumoEnergetico(consumoEnergetico);
         
         // llamar metodos
