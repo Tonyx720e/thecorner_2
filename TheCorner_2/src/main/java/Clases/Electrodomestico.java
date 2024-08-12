@@ -11,11 +11,11 @@ package Clases;
  */
 
 public class Electrodomestico{
-    private float precioBase;
+    protected float precioBase;
     //static final String color = "Blanco";
-    private String color;
-    private char consumoEner;
-    private float peso;
+    protected String color;
+    protected char consumoEner;
+    protected float peso;
     
     public float precioMinimo;
     public float precioFinal;
@@ -153,9 +153,10 @@ public class Electrodomestico{
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
             "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
-            "\n Prueba del metodo consumo Energetico: " + this.comprobarConsumoEnergetico() +
-            "\n Comprobar Color prueba: " + this.comprobarColor()+ 
-            "\n Prueba de precio Final " + this.precioFinal();
+            "\n (no sera visible) Prueba del metodo consumo Energetico: " + this.comprobarConsumoEnergetico() +
+            "\n (no sera visible) Comprobar Color prueba: " + this.comprobarColor()+ 
+            "\n Prueba de precio Final " + this.precioFinal() +
+            "\n---------------------------------------------";
     }
 
         
