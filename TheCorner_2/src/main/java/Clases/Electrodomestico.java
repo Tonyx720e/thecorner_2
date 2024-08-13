@@ -148,7 +148,19 @@ public class Electrodomestico{
         
         
     @Override
-    public String toString(){
+    public String toString() {
+            return String.format("El precio Base: %.2f\n "
+                    + "El color: %s\n "
+                    + "El peso: %.2f\n "
+                    + "El consumo energetico: %s\n "
+                    + "Prueba precio final: %.2f", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+    /*public String toString(){
     return " El precio: " + this.precioBase+
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+
@@ -157,7 +169,7 @@ public class Electrodomestico{
             "\n (no sera visible) Comprobar Color prueba: " + this.comprobarColor()+ 
             "\n Prueba de precio Final " + this.precioFinal() +
             "\n---------------------------------------------";
-    }
+    }*/
 
         
 }

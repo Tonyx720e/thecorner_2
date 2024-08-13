@@ -153,11 +153,13 @@ public class Television extends Electrodomestico {
                     }
                 }
                 //************Television
-                if(pulgadas > 40){
+                precioMinimo = (pulgadas > 40)? ((precioMinimo*30)/100 +precioMinimo): PULGADA_POR_DEFECTO;
+                /*if(pulgadas > 40){
+                    
                     precioMinimo += (precioMinimo*30)/100;
                 }else{
                     this.pulgadas = PULGADA_POR_DEFECTO;
-                }
+                }*/
                 if(tdt){
                     precioMinimo = precioMinimo + 50;
                 }else{
@@ -175,13 +177,25 @@ public class Television extends Electrodomestico {
                 return precioFinal;
             }
         
-        @Override
-        public String toString(){
+    @Override
+        public String toString() {
+            return String.format("El precio Base: %.2f\n "
+                    + "El color: %s\n "
+                    + "El peso: %.2f\n "
+                    + "El consumo energetico: %s\n "
+                    + "Prueba precio final: %.2f", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+        /*public String toString(){
         return " El precio base: " + this.precioBase+ " $"+
             "\n El color: " + this.color+
             "\n El peso: "  + this.peso+ " Kg" +
             "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
             "\n Prueba de precio Final " + this.precioFinal()+ " $" +  
                 "\n---------------------------------------------";
-        }
+        }*/
 }

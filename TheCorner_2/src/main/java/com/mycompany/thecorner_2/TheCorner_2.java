@@ -37,7 +37,7 @@ public class TheCorner_2 {
         ObjetoElectroD.setColor(color);
         ObjetoElectroD.setConsumoEnergetico(consumoEnergetico);
         System.out.println(ObjetoElectroD.toString());
-        System.out.println("Esto es prueba de color: " + ObjetoElectroD.getColor());
+        System.out.println("--------------------------------");
         //esto es una prueba        
         //electroD.setConsumoEnergetico(consumoEnergetico);
        
@@ -71,6 +71,7 @@ public class TheCorner_2 {
         ObjetoTelevision.setColor(colorTv);
         ObjetoTelevision.setConsumoEnergetico(consumoEnergeticoTv);
         System.out.println(ObjetoTelevision.toString());
+        System.out.println("-------------------------------------");
         
         //sc.close();
     }
