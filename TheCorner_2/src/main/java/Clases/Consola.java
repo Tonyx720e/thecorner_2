@@ -8,9 +8,10 @@ package Clases;
  *
  * @author Tony Medina
  */
-public class Television extends Electrodomestico {
-    private int pulgadas;
-    private boolean tdt = false;
+public class Consola extends Electrodomestico {
+    private int tipoConsola;
+    private String consola;
+    
     
     //constantes
     private static final String COLOR_POR_DEFECTO = "blanco";
@@ -19,38 +20,29 @@ public class Television extends Electrodomestico {
      private static final float PRECIO_POR_DEFECTO = 100;
     
     private static final int PULGADA_POR_DEFECTO = 20;
-    private static final boolean TDT_POR_DEFECTO = false;
     
     // Array de colores
     private static final String[] colorDisponible = {"blanco","negro","rojo","azul","gris"};
     
-    public Television(){
+    public Consola(){
         super();
     }
-    public Television(float precioBase, float peso){
+    public Consola(float precioBase, float peso){
         super();
         this.precioBase = precioBase;
         this.peso = peso;
     }
-    public Television(int pulgada, boolean tdt, float precioBase, String color, char consumoEner, float peso){
+    public Consola(int tipoConsola, float precioBase, String color, char consumoEner, float peso){
         super();
-        this.pulgadas = pulgadas;
-        this.tdt = tdt;
+       this.tipoConsola = tipoConsola;
     }
     //Metodos setters
-    public void setPulgada(int pulgada){
-        this.pulgadas = pulgada;
+    public void setTipoConsola(int tipoConsola){
+        this.tipoConsola = tipoConsola;
     }
-    public void setTdt(boolean tdt){
-        this.tdt = tdt;
-    }
+   
     //Metodos getters
-    public int getPulgada(){
-        return this.pulgadas;
-    }
-    public boolean getTdt(){
-        return this.tdt;
-    }
+    
     public void setPrecioBase(float precioBase){
         //Operador ternario
        this.precioBase = (precioBase != 0)? precioBase: PRECIO_POR_DEFECTO;
@@ -139,6 +131,21 @@ public class Television extends Electrodomestico {
         color = COLOR_POR_DEFECTO;
         return color;
     }
+        public String tipoConso(){
+                switch (this.tipoConsola){
+                    case 1:
+                        return this.consola = "ps4";
+                         
+                    case 2:
+                         return this.consola = "ps5";
+                    case 3:
+                         return this.consola = "Xbox";
+                    case 4:
+                         return this.consola = "Nintendo";
+                        default:
+                            this.consola = "Consola descontinuada";
+            }           return this.consola;
+ }
     @Override
         public float precioFinal(){
             
@@ -151,20 +158,6 @@ public class Television extends Electrodomestico {
                     case 'F', 'f' -> precioMinimo = precioBase + 10;
                     default -> {
                     }
-                }
-                //************Television
-                // arreglar no va pulgada por defecto va es precio justo, resta al no colocar pulgadas
-                precioMinimo = (pulgadas > 40)? ((precioMinimo*30)/100 +precioMinimo): PULGADA_POR_DEFECTO;
-                /*if(pulgadas > 40){
-                    
-                    precioMinimo += (precioMinimo*30)/100;
-                }else{
-                    this.pulgadas = PULGADA_POR_DEFECTO;
-                }*/
-                if(tdt){
-                    precioMinimo = precioMinimo + 50;
-                }else{
-                    this.tdt = TDT_POR_DEFECTO;
                 }
                 if(peso > 0 & peso <= 19){
                     precioFinal = precioMinimo + 10;
@@ -180,11 +173,14 @@ public class Television extends Electrodomestico {
         
     @Override
         public String toString() {
-            return String.format("El precio Base: %.2f\n "
-                    + "El color: %s\n "
-                    + "El peso: %.2f\n "
-                    + "El consumo energetico: %s\n "
-                    + "Prueba precio final: %.2f", 
+            return String.format("""
+                                  Modelo consola: %s
+                                  Precio base: %.2f
+                                  El color: %s
+                                  El peso: %.2f
+                                  El consumo energetico: %s
+                                  Prueba precio final: %.2f""",
+                         this.tipoConso(),
                          this.getPrecioBase(), 
                          this.getColor(), 
                          this.getPeso(), 

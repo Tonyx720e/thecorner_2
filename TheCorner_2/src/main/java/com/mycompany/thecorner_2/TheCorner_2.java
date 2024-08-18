@@ -16,6 +16,8 @@ public class TheCorner_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
+       
+        
         System.out.println("Introduce el precio general: ");
         float precioBase = sc.nextFloat();
         System.out.println("Introduce peso: ");
@@ -44,7 +46,7 @@ public class TheCorner_2 {
        //float precioFinal = electroD.precioFinal();
         //System.out.println("Precio Final: " + precioFinal);
         // Television
-         System.out.println("Introduce el precio Tv: ");
+        System.out.println("Introduce el precio Tv: ");
         float precioBaseTv = sc.nextFloat();
         System.out.println("Introduce pulgadas");
         int pulgadas = sc.nextInt();
@@ -72,7 +74,70 @@ public class TheCorner_2 {
         ObjetoTelevision.setConsumoEnergetico(consumoEnergeticoTv);
         System.out.println(ObjetoTelevision.toString());
         System.out.println("-------------------------------------");
-        
         //sc.close();
+        
+        
+            // Inicio de Consola    
+       
+            //System.out.println("El precio Final: " + miElectro.precioFinal());
+            //System.out.println("El precio final electro: " + miElectro.precioFinal());
+            //System.out.println("El precio final television: " + totalTelevision);
+            System.out.println(ObjetoTelevision.toString());
+            System.out.println("Introduce 1,2,3,4 modelo consola");
+            int tipoConsola = sc.nextInt();
+            System.out.println("Introduce el precio de consola: ");
+            float precioBaseConsola = sc.nextFloat();
+       
+            System.out.println("Introduce peso: ");
+            float pesoConsola = sc.nextFloat();
+            System.out.println("Introduce Color: ");
+        
+            String colorConsola = sc.next();
+        
+            System.out.println("Introduce consumo energetico: ");
+            char consumoEnergeticoConsola = sc.next().charAt(0);
+        
+            Consola ObjetoConsola;
+            ObjetoConsola = new Consola();
+            ObjetoConsola.setTipoConsola(tipoConsola);
+            ObjetoConsola.setPrecioBase(precioBaseConsola);
+            ObjetoConsola.setPeso(pesoConsola);
+            ObjetoConsola.setColor(colorConsola);
+            ObjetoConsola.setConsumoEnergetico(consumoEnergeticoConsola);
+            System.out.println(ObjetoConsola.toString());
+            System.out.println("-------------------------------------");
+            
+             Electrodomestico[] electrodomesticos = new Electrodomestico[3];
+            //
+        float totalElectroD = 0;
+        float totalTelevision = 0;
+        float totalConsola = 0;
+        float precioTotal = 0;
+        //Electrodomestico[] electrodomesticos = new Electrodomestico[6];
+        electrodomesticos[0] = ObjetoElectroD;
+        electrodomesticos[1] = ObjetoTelevision;
+        electrodomesticos[2] = ObjetoConsola;
+        
+        //Inicio del for ech
+        for(Electrodomestico miElectro: electrodomesticos){
+            
+            if(miElectro instanceof Electrodomestico){
+                
+                totalElectroD = ObjetoElectroD.precioFinal();
+                
+            }if(miElectro instanceof Television){
+                
+                totalTelevision = ObjetoTelevision.precioFinal();
+            }if(miElectro instanceof Consola){
+                totalConsola = ObjetoConsola.precioFinal();
+            }
+            precioTotal = totalElectroD + totalTelevision + totalConsola;
+        }
+        // Fin for ech
+        // impresion de mis objetos
+        System.out.println("El precio eletrodomesticos: " + totalElectroD);
+        System.out.println("El precio Television: " + totalTelevision);
+        System.out.println("El precio de consola: " + totalConsola);
+        System.out.println("Precio de suma de electrodomesticos " + precioTotal);
     }
 }
