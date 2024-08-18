@@ -106,17 +106,44 @@ public class TheCorner_2 {
             ObjetoConsola.setConsumoEnergetico(consumoEnergeticoConsola);
             System.out.println(ObjetoConsola.toString());
             System.out.println("-------------------------------------");
-            
-             Electrodomestico[] electrodomesticos = new Electrodomestico[3];
+            // Seccion de computadora
+            System.out.println(ObjetoTelevision.toString());
+            System.out.println("Introduce 1,2,3,4 modelo computadora");
+            int tipoComputadora = sc.nextInt();
+            System.out.println("Introduce el precio de consola: ");
+            float precioBaseComputadora = sc.nextFloat();
+       
+            System.out.println("Introduce peso: ");
+            float pesoComputadora = sc.nextFloat();
+            System.out.println("Introduce Color: ");
+        
+            String colorComputadora = sc.next();
+        
+            System.out.println("Introduce consumo energetico: ");
+            char consumoEnergeticoComputadora = sc.next().charAt(0);
+        
+            Computadora ObjetoComputadora;
+            ObjetoComputadora = new Computadora();
+            ObjetoConsola.setTipoConsola(tipoComputadora);
+            ObjetoConsola.setPrecioBase(precioBaseComputadora);
+            ObjetoConsola.setPeso(pesoComputadora);
+            ObjetoConsola.setColor(colorComputadora);
+            ObjetoConsola.setConsumoEnergetico(consumoEnergeticoComputadora);
+            System.out.println(ObjetoConsola.toString());
+            System.out.println("-------------------------------------");
+            // Creacion de array
+             Electrodomestico[] electrodomesticos = new Electrodomestico[4];
             //
         float totalElectroD = 0;
         float totalTelevision = 0;
         float totalConsola = 0;
+        float totalComputadora = 0;
         float precioTotal = 0;
         //Electrodomestico[] electrodomesticos = new Electrodomestico[6];
         electrodomesticos[0] = ObjetoElectroD;
         electrodomesticos[1] = ObjetoTelevision;
         electrodomesticos[2] = ObjetoConsola;
+        electrodomesticos[3] = ObjetoComputadora;
         
         //Inicio del for ech
         for(Electrodomestico miElectro: electrodomesticos){
@@ -128,16 +155,22 @@ public class TheCorner_2 {
             }if(miElectro instanceof Television){
                 
                 totalTelevision = ObjetoTelevision.precioFinal();
+                
             }if(miElectro instanceof Consola){
                 totalConsola = ObjetoConsola.precioFinal();
+                
+            }if(miElectro instanceof Computadora){
+                totalComputadora = ObjetoConsola.precioFinal();
             }
-            precioTotal = totalElectroD + totalTelevision + totalConsola;
+            precioTotal = totalElectroD + totalTelevision +
+                    totalConsola + totalComputadora;
         }
         // Fin for ech
         // impresion de mis objetos
         System.out.println("El precio eletrodomesticos:-----> " + totalElectroD);
-        System.out.println("El precio Television: --------->" + totalTelevision);
-        System.out.println("El precio de consola:------------> " + totalConsola);
-        System.out.println("Precio total electrodomesticos ---> " + precioTotal);
+        System.out.println("El precio Television: ----------->" + totalTelevision);
+        System.out.println("El precio de consola:-----------> " + totalConsola);
+        System.out.println("El precio de computadora:-------->" + totalComputadora);
+        System.out.println("Precio total electrodomesticos -> " + precioTotal);
     }
 }
