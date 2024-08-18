@@ -135,9 +135,9 @@ public class TheCorner_2 {
         }
         // Fin for ech
         // impresion de mis objetos
-        System.out.println("El precio eletrodomesticos: " + totalElectroD);
-        System.out.println("El precio Television: " + totalTelevision);
-        System.out.println("El precio de consola: " + totalConsola);
-        System.out.println("Precio de suma de electrodomesticos " + precioTotal);
+        System.out.println("El precio eletrodomesticos:-----> " + totalElectroD);
+        System.out.println("El precio Television: --------->" + totalTelevision);
+        System.out.println("El precio de consola:------------> " + totalConsola);
+        System.out.println("Precio total electrodomesticos ---> " + precioTotal);
     }
 }
