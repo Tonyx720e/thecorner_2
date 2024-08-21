@@ -8,7 +8,7 @@ package Clases;
  *
  * @author Tony Medina
  */
-public class Television extends Electrodomestico {
+    public class Television extends Electrodomestico implements IIngles{
     private int pulgadas;
     private boolean tdt = false;
     
@@ -51,6 +51,7 @@ public class Television extends Electrodomestico {
     public boolean getTdt(){
         return this.tdt;
     }
+    @Override
     public void setPrecioBase(float precioBase){
         //Operador ternario
        this.precioBase = (precioBase != 0)? precioBase: PRECIO_POR_DEFECTO;
@@ -60,14 +61,17 @@ public class Television extends Electrodomestico {
         this.precioBase = PRECIO_POR_DEFECTO;
        }*/
     }
+    @Override
     public void setColor(String color){
         this.color = color;
          
     }
     
+    @Override
     public void setConsumoEnergetico(char consumoEner){
         this.consumoEner = consumoEner;
     }
+    @Override
     public void setPeso(float peso){
         //Operador ternario
         this.peso = (peso >5)? peso: PESO_POR_DEFECTO;
@@ -180,11 +184,26 @@ public class Television extends Electrodomestico {
         
     @Override
         public String toString() {
-            return String.format("El precio Base: %.2f\n "
-                    + "El color: %s\n "
-                    + "El peso: %.2f\n "
-                    + "El consumo energetico: %s\n "
-                    + "Prueba precio final: %.2f", 
+            return String.format("""
+                                 El precio Base: %.2f
+                                 El color: %s
+                                 El peso: %.2f
+                                 El consumo energetico: %s
+                                 Prueba precio final: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+    @Override
+        public String aIngles(){
+            return String.format("""
+                                 Base price: %.2f
+                                 Color: %s
+                                 Weight: %.2f
+                                 Energy consumption: %s
+                                 Test final price: %.2f""", 
                          this.getPrecioBase(), 
                          this.getColor(), 
                          this.getPeso(), 

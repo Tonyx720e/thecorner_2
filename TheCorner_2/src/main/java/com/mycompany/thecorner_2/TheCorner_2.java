@@ -132,7 +132,7 @@ public class TheCorner_2 {
             System.out.println(ObjetoConsola.toString());
             System.out.println("-------------------------------------");
             // Creacion de array
-             Electrodomestico[] electrodomesticos = new Electrodomestico[4];
+        Electrodomestico[] electrodomesticos = new Electrodomestico[4];
             //
         float totalElectroD = 0;
         float totalTelevision = 0;
@@ -164,6 +164,7 @@ public class TheCorner_2 {
             }
             precioTotal = totalElectroD + totalTelevision +
                     totalConsola + totalComputadora;
+            System.out.println("impresion en Ingles: " + ObjetoElectroD.aIngles());
         }
         // Fin for ech
         // impresion de mis objetos
@@ -172,5 +173,6 @@ public class TheCorner_2 {
         System.out.println("El precio de consola:-----------> " + totalConsola);
         System.out.println("El precio de computadora:-------->" + totalComputadora);
         System.out.println("Precio total electrodomesticos -> " + precioTotal);
+        
     }
 }

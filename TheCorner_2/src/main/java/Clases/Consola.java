@@ -8,7 +8,7 @@ package Clases;
  *
  * @author Tony Medina
  */
-public class Consola extends Electrodomestico {
+public class Consola extends Electrodomestico implements IIngles {
     private int tipoConsola;
     private String consola;
     
@@ -180,6 +180,23 @@ public class Consola extends Electrodomestico {
                                   El peso: %.2f
                                   El consumo energetico: %s
                                   Prueba precio final: %.2f""",
+                         this.tipoConso(),
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+        // Ingles
+    @Override
+        public String aIngles() {
+            return String.format("""
+                                  Console model: %s
+                                  Base price: %.2f
+                                  Color: %s
+                                  Weight: %.2f
+                                  Energy consumption: %s
+                                  Test final price: %.2f""",
                          this.tipoConso(),
                          this.getPrecioBase(), 
                          this.getColor(), 

@@ -10,7 +10,7 @@ package Clases;
  * @author Tony Medina
  */
 
-public class Electrodomestico{
+public class Electrodomestico implements IIngles{
     protected float precioBase;
     //static final String color = "Blanco";
     protected String color;
@@ -149,11 +149,27 @@ public class Electrodomestico{
         
     @Override
     public String toString() {
-            return String.format("El precio Base: %.2f\n "
-                    + "El color: %s\n "
-                    + "El peso: %.2f\n "
-                    + "El consumo energetico: %s\n "
-                    + "Prueba precio final: %.2f", 
+            return String.format("""
+                                 El precio Base: %.2f
+                                  El color: %s
+                                  El peso: %.2f
+                                  El consumo energetico: %s
+                                  Prueba precio final: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+    // Ingles
+    @Override
+    public String aIngles() {
+            return String.format("""
+                                  Base price: %.2f
+                                  Color: %s
+                                  Weight: %.2f
+                                  Energy consumption: %s
+                                  Test final price: %.2f""", 
                          this.getPrecioBase(), 
                          this.getColor(), 
                          this.getPeso(), 
