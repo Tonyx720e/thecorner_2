@@ -12,12 +12,12 @@ import java.util.List;
  * @author tonym
  */
 public class Metodos {
-    private List<String> lista;
+    private ArrayList<String> listaElectro;
     
     public Metodos(){
        
         
-        lista = new ArrayList<>();
+        listaElectro = new ArrayList<>();
     }
     public void agregarElectro(float precioBase, float peso, String color, char consumoEnergetico){
         

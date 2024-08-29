@@ -157,7 +157,7 @@ public class TheCorner_2 {
         System.out.println("El precio de computadora:-------->" + totalComputadora);
         System.out.println("Precio total electrodomesticos -> " + precioTotal);*/
         
-        List<Electrodomestico> lista = new ArrayList<>();
+        ArrayList<Electrodomestico> listaElectro = new ArrayList<>();
         int op;
         do{
             System.out.println("1-) Ingres electrodomestico");
@@ -192,6 +192,7 @@ public class TheCorner_2 {
                 miElectro.setPeso(peso);
                 miElectro.setColor(color);
                 miElectro.setConsumoEnergetico(consumoEnergetico);
+                miElectro.agregarElectro(precioBase, peso, color, consumoEnergetico, listaElectro);
                 System.out.println(miElectro.toString());
                 //float precioFinal = electroD.precioFinal();
                 //System.out.println("Precio Final: " + precioFinal);
@@ -283,7 +284,13 @@ public class TheCorner_2 {
         
         }
         }while(op2 != 5);
-               
+            case 2:
+                Electrodomestico miElectro = new Electrodomestico();
+                System.out.println("Ingrese Color para buscar");
+                String color = sc.next();
+                Electrodomestico respuesta;
+                respuesta = miElectro.buscarElectro(color, listaElectro);
+                System.out.println("Electro es: "+ respuesta);
         }
         }while(op != 4);
         
