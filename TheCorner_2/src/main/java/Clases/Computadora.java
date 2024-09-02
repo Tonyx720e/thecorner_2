@@ -32,12 +32,12 @@ public class Computadora extends Electrodomestico {
         this.peso = peso;
     }
     public Computadora(int computadora, float precioBase, String color, char consumoEner, float peso){
-        super();
-       this.tipoComputadora = tipoComputadora;
+        super(precioBase, color, consumoEner, peso);
+       this.tipoComputadora = computadora;
     }
     //Metodos setters
     public void setTipoComputadora(int computadora){
-        this.tipoComputadora = tipoComputadora;
+        this.tipoComputadora = computadora;
     }
    
     //Metodos getters
@@ -176,7 +176,7 @@ public class Computadora extends Electrodomestico {
     @Override
         public String toString() {
             return String.format("""
-                                  Modelo consola: %s
+                                  Modelo de computadora: %s
                                   Precio base: %.2f
                                   El color: %s
                                   El peso: %.2f

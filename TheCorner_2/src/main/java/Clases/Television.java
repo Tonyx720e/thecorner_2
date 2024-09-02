@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tony Medina
@@ -23,18 +25,21 @@ package Clases;
     
     // Array de colores
     private static final String[] colorDisponible = {"blanco","negro","rojo","azul","gris"};
-    
+    //ArrayList<Television> listaTelevisor;
     public Television(){
         super();
+        //this.listaTelevisor = new ArrayList();
     }
     public Television(float precioBase, float peso){
         super();
+        //this.listaTelevisor = new ArrayList();
         this.precioBase = precioBase;
         this.peso = peso;
     }
     public Television(int pulgada, boolean tdt, float precioBase, String color, char consumoEner, float peso){
-        super();
-        this.pulgadas = pulgadas;
+        super(precioBase, color, consumoEner, peso);
+        //this.listaTelevisor = new ArrayList();
+        this.pulgadas = pulgada;
         this.tdt = tdt;
     }
     //Metodos setters

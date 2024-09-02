@@ -31,19 +31,22 @@ public class Electrodomestico implements IIngles{
      // Colores disponibles
     private static final String[] colorDisponible = {"blanco","negro","rojo","azul","gris"};
     //Creamos nuestro array
-    ArrayList<Electrodomestico> listaElectro;
+    //ArrayList<Electrodomestico> listaElectro;
     
     public Electrodomestico(){
-        this.listaElectro = new ArrayList<>();
+        super();
+        //this.listaElectro = new ArrayList<>();
+        
        
     }
     public Electrodomestico(float precioBase, float peso){
-        this.listaElectro = new ArrayList<>();
+        super();
+        //this.listaElectro = new ArrayList<>();
         this.precioBase = precioBase;
         this.peso = peso;
     }
     public Electrodomestico(float precioBase, String color, char consumoEner, float peso){
-        this.listaElectro = new ArrayList<>();
+        //this.listaElectro = new ArrayList<>();
         this.precioBase = precioBase;
         this.color = color;
         this.consumoEner = consumoEner;
@@ -151,11 +154,11 @@ public class Electrodomestico implements IIngles{
                 }
             return precioFinal;
             }
-        public void agregarElectro(float precioBase, float peso, String color, char consumoEnergetico, ArrayList<Electrodomestico> listaElectro){
+        /*public void agregarElectro(float precioBase, float peso, String color, char consumoEnergetico, ArrayList<Electrodomestico> listaElectro){
         Electrodomestico Electrodomestico;
         Electrodomestico = new Electrodomestico();
             listaElectro.add(Electrodomestico);
-        };
+        }*/
         public static Electrodomestico buscarElectro(String color, ArrayList<Electrodomestico> listaElectro){
         Electrodomestico respuesta = new Electrodomestico();
             for(Electrodomestico b: listaElectro){

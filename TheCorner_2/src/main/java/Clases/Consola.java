@@ -33,7 +33,7 @@ public class Consola extends Electrodomestico implements IIngles {
         this.peso = peso;
     }
     public Consola(int tipoConsola, float precioBase, String color, char consumoEner, float peso){
-        super();
+       super(precioBase, color, consumoEner, peso);
        this.tipoConsola = tipoConsola;
     }
     //Metodos setters
