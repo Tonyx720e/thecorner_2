@@ -4,13 +4,13 @@
  */
 package Clases;
 
-import java.util.ArrayList;
+
 
 /**
  *
  * @author Tony Medina
  */
-    public class Television extends Electrodomestico implements IIngles{
+    public class Television extends Electrodomestico implements IIngles, ListaMetodo{
     private int pulgadas;
     private boolean tdt = false;
     
@@ -186,7 +186,20 @@ import java.util.ArrayList;
                 }
                 return precioFinal;
             }
-        
+     @Override
+        public String lista() {
+            return String.format("""
+                                 El precio Base: %.2f
+                                 El color: %s
+                                 El peso: %.2f
+                                 El consumo energetico: %s
+                                 Prueba precio final: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }   
     @Override
         public String toString() {
             return String.format("""
@@ -215,12 +228,5 @@ import java.util.ArrayList;
                          this.getConsuEnergetico(), 
                          this.precioFinal());
         }
-        /*public String toString(){
-        return " El precio base: " + this.precioBase+ " $"+
-            "\n El color: " + this.color+
-            "\n El peso: "  + this.peso+ " Kg" +
-            "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
-            "\n Prueba de precio Final " + this.precioFinal()+ " $" +  
-                "\n---------------------------------------------";
-        }*/
+        
 }

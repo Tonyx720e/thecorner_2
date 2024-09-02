@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Tony Medina
  */
 
-public class Electrodomestico implements IIngles{
+public class Electrodomestico implements IIngles, ListaMetodo{
     protected float precioBase;
     //static final String color = "Blanco";
     protected String color;
@@ -167,9 +167,23 @@ public class Electrodomestico implements IIngles{
                 }
             } return respuesta;
         }
-        
+    
     @Override
     public String toString() {
+            return String.format("""
+                                 El precio Base: %.2f
+                                  El color: %s
+                                  El peso: %.2f
+                                  El consumo energetico: %s
+                                  Prueba precio final: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }    
+    @Override
+    public String lista() {
             return String.format("""
                                  El precio Base: %.2f
                                   El color: %s
@@ -197,16 +211,5 @@ public class Electrodomestico implements IIngles{
                          this.getConsuEnergetico(), 
                          this.precioFinal());
         }
-    /*public String toString(){
-    return " El precio: " + this.precioBase+
-            "\n El color: " + this.color+
-            "\n El peso: "  + this.peso+
-            "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
-            "\n (no sera visible) Prueba del metodo consumo Energetico: " + this.comprobarConsumoEnergetico() +
-            "\n (no sera visible) Comprobar Color prueba: " + this.comprobarColor()+ 
-            "\n Prueba de precio Final " + this.precioFinal() +
-            "\n---------------------------------------------";
-    }*/
-
-        
+   
 }

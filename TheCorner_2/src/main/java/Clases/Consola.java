@@ -8,7 +8,7 @@ package Clases;
  *
  * @author Tony Medina
  */
-public class Consola extends Electrodomestico implements IIngles {
+public class Consola extends Electrodomestico implements IIngles, ListaMetodo{
     private int tipoConsola;
     private String consola;
     
@@ -170,7 +170,23 @@ public class Consola extends Electrodomestico implements IIngles {
                 }
                 return precioFinal;
             }
-        
+    
+    @Override
+        public String lista() {
+            return String.format("""
+                                  Modelo consola: %s
+                                  Precio base: %.2f
+                                  El color: %s
+                                  El peso: %.2f
+                                  El consumo energetico: %s
+                                  Prueba precio final: %.2f""",
+                         this.tipoConso(),
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }    
     @Override
         public String toString() {
             return String.format("""
@@ -204,12 +220,5 @@ public class Consola extends Electrodomestico implements IIngles {
                          this.getConsuEnergetico(), 
                          this.precioFinal());
         }
-        /*public String toString(){
-        return " El precio base: " + this.precioBase+ " $"+
-            "\n El color: " + this.color+
-            "\n El peso: "  + this.peso+ " Kg" +
-            "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
-            "\n Prueba de precio Final " + this.precioFinal()+ " $" +  
-                "\n---------------------------------------------";
-        }*/
+       
 }

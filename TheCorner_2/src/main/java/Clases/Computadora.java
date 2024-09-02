@@ -8,7 +8,7 @@ package Clases;
  *
  * @author Tony Medina
  */
-public class Computadora extends Electrodomestico {
+public class Computadora extends Electrodomestico implements IIngles, ListaMetodo{
     private int tipoComputadora;
     private String computadora;
     
@@ -172,7 +172,35 @@ public class Computadora extends Electrodomestico {
                 }
                 return precioFinal;
             }
-        
+    
+    @Override
+    public String lista() {
+            return String.format("""
+                                  Base price: %.2f
+                                  Color: %s
+                                  Weight: %.2f
+                                  Energy consumption: %s
+                                  Test final price: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
+    @Override
+    public String aIngles() {
+            return String.format("""
+                                  Base price: %.2f
+                                  Color: %s
+                                  Weight: %.2f
+                                  Energy consumption: %s
+                                  Test final price: %.2f""", 
+                         this.getPrecioBase(), 
+                         this.getColor(), 
+                         this.getPeso(), 
+                         this.getConsuEnergetico(), 
+                         this.precioFinal());
+        }
     @Override
         public String toString() {
             return String.format("""
@@ -189,12 +217,7 @@ public class Computadora extends Electrodomestico {
                          this.getConsuEnergetico(), 
                          this.precioFinal());
         }
-        /*public String toString(){
-        return " El precio base: " + this.precioBase+ " $"+
-            "\n El color: " + this.color+
-            "\n El peso: "  + this.peso+ " Kg" +
-            "\n El Consumo Energetico: " + this.getConsuEnergetico() + 
-            "\n Prueba de precio Final " + this.precioFinal()+ " $" +  
-                "\n---------------------------------------------";
-        }*/
+        
+
+    
 }

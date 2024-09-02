@@ -8,7 +8,6 @@ package Clases;
  *
  * @author tonym
  */
-public interface IIngles {
-    public String aIngles();
-   
+public interface ListaMetodo {
+    abstract String lista();
 }
